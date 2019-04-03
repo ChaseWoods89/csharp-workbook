@@ -6,14 +6,31 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hey there stranger, what's your name?");
-            String userName = Console.ReadLine();
-            Console.WriteLine("Well, pleasure to meet you " + userName + ". My Name is Chase!");
-            Console.ReadLine();
+            string NumberOneInput;
+            string NumberTwoInput;
 
-            //how to convert string var to int var
+            Console.WriteLine("First number?");
+            NumberOneInput = Console.ReadLine();
+            Console.WriteLine("Second number?");
+            NumberTwoInput = Console.ReadLine();
 
-            //2. Convert from yards to inches
+            int NumberOne = Convert.ToInt32(NumberOneInput);
+            int NumberTwo = Convert.ToInt32(NumberTwoInput);
+
+            Console.WriteLine("Your Number is " + (NumberOne + NumberTwo));
+
+            Console.WriteLine("--------------------------------------");
+
+            Console.WriteLine("How many yards are you measuring?");
+            string yardsInput = Console.ReadLine();
+
+            int Yards = Convert.ToInt32(yardsInput);
+            int Inches = Yards*36;
+
+            Console.WriteLine("There are " + Inches + " inches in " + Yards + "."); 
+
+
+
         }
     }
 }
