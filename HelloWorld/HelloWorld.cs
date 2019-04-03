@@ -10,6 +10,10 @@ namespace HelloWorld
             String userName = Console.ReadLine();
             Console.WriteLine("Well, pleasure to meet you " + userName + ". My Name is Chase!");
             Console.ReadLine();
+
+            //how to convert string var to int var
+
+            //2. Convert from yards to inches
         }
     }
 }
