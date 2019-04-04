@@ -51,8 +51,10 @@ namespace HelloWorld
 
             Console.WriteLine("--------------------------------------");
 
-
-
+            Console.WriteLine(10+100);
+            Console.WriteLine(10*100);
+            Console.WriteLine(100-10);
+            Console.WriteLine(100/10);
 
         }
     }
