@@ -24,17 +24,19 @@ namespace PigLatin
             char [] vowels = {'a', 'e','i','o','u'};
 
             int firstVowelIndex = userInput.IndexOfAny(vowels);
-            int lastVowelIndex = userInput.LastIndexOf(vowels);
 
             string firstPart = userInput.Substring(0,firstVowelIndex);
             string secondPart = userInput.Substring(firstVowelIndex);
 
-            if (lastVowelIndex == 1)
+            if (firstVowelIndex == 0)
             {
-                
+            Console.WriteLine(userInput + "yay");
+            }
+            else
+            {
+            Console.WriteLine(secondPart + firstPart + "ay");     
             }
 
-            Console.WriteLine(secondPart + firstPart + "ay");
             
 
             //leave this command
