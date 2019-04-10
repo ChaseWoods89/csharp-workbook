@@ -6,7 +6,22 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Give me a number!");
+            string userNumberInput = Console.ReadLine();
+
+             int userNumber = Convert.ToInt32(userNumberInput);
+
+             if ( userNumber >= 0)
+             {
+                 Console.WriteLine(userNumber + " is a positive number!");
+             }
+             else
+             {
+                 Console.WriteLine(userNumber + " is a negative number!");
+             }
+
+             Console.ReadLine();
+
         }
     }
 }
