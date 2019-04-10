@@ -10,7 +10,7 @@ namespace RockPaperScissors
             string hand1 = Console.ReadLine().ToLower();
             Random generator = new Random();
             string [] hand2Choice = {"rock", "paper", "scissors"};
-            int hand2Index = generator.Next(0, hand2Choice.Length);
+            int hand2Index = generator.Next(hand2Choice.Length);
             string hand2 = hand2Choice[hand2Index];
             Console.WriteLine("Hand 2 is " + hand2);
             Console.WriteLine(CompareHands(hand1, hand2));
