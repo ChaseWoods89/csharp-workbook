@@ -52,8 +52,6 @@ namespace TicTacToe
 
         public static bool CheckForTie()
         {
-            // your code goes here
-
             return false;
         }
         
