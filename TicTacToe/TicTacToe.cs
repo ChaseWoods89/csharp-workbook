@@ -32,11 +32,18 @@ namespace TicTacToe
             int row = int.Parse(Console.ReadLine());
             Console.WriteLine("Enter Column:");
             int column = int.Parse(Console.ReadLine());
+            playerTurn = (playerTurn == "X") ? "O" : "X";
+            
         }
 
         public static void PlaceMark(int row, int column)
         {
-        // your code goes here
+            if (playerTurn == "X") {
+                board[row][column] = "X";
+            }
+            else {
+                board[row][column] = "O";
+            }
         }
 
         public static bool CheckForWin()
