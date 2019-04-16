@@ -45,40 +45,92 @@ namespace TicTacToe
 
         public static bool CheckForWin()
         {
-            // your code goes here
+            if(VerticalWin() == true)
+            {
+                Console.WriteLine(playerTurn + " Wins!!!");
+            }
 
+            else if(HorizontalWin() == true)
+            {
+                Console.WriteLine(playerTurn + " Wins!!!");
+            } 
+            else if (DiagonalWin() == true)
+            {
+                Console.WriteLine(playerTurn + " Wins!!!");
+            }
+
+            else 
+            {
+                GetInput();
+            }
             return false;
+            
         }
 
         public static bool CheckForTie()
         {
-            return false;
+           /* if(HorizontalWin() == false && VerticalWin() == false && DiagonalWin() == false)
+            {
+                return true;
+            }
+            else {*/
+                return false;
+            
         }
         
         public static bool HorizontalWin()
         {
-            return(board[0][0] == playerTurn && board[0][1] == playerTurn && board[0][2] == playerTurn);
-            return(board[1][0] == playerTurn && board[1][1] == playerTurn && board[1][2] == playerTurn);
-            return(board[2][0] == playerTurn && board[2][1] == playerTurn && board[2][2] == playerTurn);
-            return false;
+            if(board[0][0] == playerTurn && board[0][1] == playerTurn && board[0][2] == playerTurn)
+            {
+                return true;
+            }
+            else if(board[1][0] == playerTurn && board[1][1] == playerTurn && board[1][2] == playerTurn)
+            {
+                return true;
+            }
+            else if(board[2][0] == playerTurn && board[2][1] == playerTurn && board[2][2] == playerTurn)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public static bool VerticalWin()
         {
-            return(board[0][0] == playerTurn && board[1][0] == playerTurn && board[2][0] == playerTurn);
-            return(board[0][1] == playerTurn && board[1][1] == playerTurn && board[2][1] == playerTurn);
-            return(board[0][2] == playerTurn && board[1][2] == playerTurn && board[2][2] == playerTurn);
-
-            return false;
+            if(board[0][0] == playerTurn && board[1][0] == playerTurn && board[2][0] == playerTurn)
+            {
+                return true;
+            }
+            else if(board[0][1] == playerTurn && board[1][1] == playerTurn && board[2][1] == playerTurn)
+            {
+                return true;
+            }
+            else if(board[0][2] == playerTurn && board[1][2] == playerTurn && board[2][2] == playerTurn)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public static bool DiagonalWin()
         {
-            return(board[0][0] == playerTurn && board[1][1] == playerTurn && board[2][2] == playerTurn);
-            return(board[0][2] == playerTurn && board[1][1] == playerTurn && board[2][0] == playerTurn);
-
-
-            return false;
+            if (board[0][0] == playerTurn && board[1][1] == playerTurn && board[2][2] == playerTurn)
+            {
+                return true;
+            }
+            else if(board[0][2] == playerTurn && board[1][1] == playerTurn && board[2][0] == playerTurn)
+            {
+                return true;
+            }
+            else {
+                return false;
+            }
         }
 
         public static void DrawBoard()
