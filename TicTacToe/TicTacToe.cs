@@ -47,22 +47,21 @@ namespace TicTacToe
         {
             if(VerticalWin() == true)
             {
-                Console.WriteLine(playerTurn + " Wins!!!");
+                Console.WriteLine("Player " + playerTurn + " Wins!!!");
+                Console.ReadLine();
             }
 
             else if(HorizontalWin() == true)
             {
-                Console.WriteLine(playerTurn + " Wins!!!");
+                Console.WriteLine("Player " + playerTurn + " Wins!!!");
+                Console.ReadLine();
             } 
             else if (DiagonalWin() == true)
             {
-                Console.WriteLine(playerTurn + " Wins!!!");
+                Console.WriteLine("Player" + playerTurn + " Wins!!!");
+                Console.ReadLine();
             }
 
-            else 
-            {
-                GetInput();
-            }
             return false;
             
         }
