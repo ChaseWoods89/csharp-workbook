@@ -24,6 +24,12 @@ namespace FizzBuzz
         {  
             Console.WriteLine(i);  
         }  
+        int num = 0;
+        while(num <= 100)
+        {
+            
+        }
+
     }  
     }
     }
