@@ -49,17 +49,21 @@ namespace TicTacToe
             {
                 Console.WriteLine("Player " + playerTurn + " Wins!!!");
                 Console.ReadLine();
+                Environment.Exit(0);
             }
 
             else if(HorizontalWin() == true)
             {
                 Console.WriteLine("Player " + playerTurn + " Wins!!!");
                 Console.ReadLine();
+                Environment.Exit(0);
+
             } 
             else if (DiagonalWin() == true)
             {
                 Console.WriteLine("Player" + playerTurn + " Wins!!!");
                 Console.ReadLine();
+                Environment.Exit(0);
             }
 
             return false;
@@ -68,13 +72,16 @@ namespace TicTacToe
 
         public static bool CheckForTie()
         {
-           /* if(HorizontalWin() == false && VerticalWin() == false && DiagonalWin() == false)
+           if(board[0][0] == playerTurn && board[0][1] == playerTurn && board[0][2] == playerTurn && board[1][0] == playerTurn && board[1][1] == playerTurn && board[1][2] == playerTurn && board[2][0] == playerTurn && board [2][1] == playerTurn && board[2][2] == playerTurn && HorizontalWin() == false && VerticalWin() == false && DiagonalWin() == false)
             {
+                Console.WriteLine("It's a Tie!");
+                Console.ReadLine();
+                Environment.Exit(0);
                 return true;
             }
-            else {*/
+            else {
                 return false;
-            
+            }    
         }
         
         public static bool HorizontalWin()
