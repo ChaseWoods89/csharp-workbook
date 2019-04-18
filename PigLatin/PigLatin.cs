@@ -26,6 +26,8 @@ namespace PigLatin
             int firstVowelIndex = userInput.IndexOfAny(vowels);
             int firstYIndex = userInput.IndexOf('y');
 
+            
+
             string firstPart = userInput.Substring(0,firstVowelIndex);
             string secondPart = userInput.Substring(firstVowelIndex);
 
@@ -38,7 +40,7 @@ namespace PigLatin
             }
             else if (firstYIndex != 0)
             Console.WriteLine(secondYPart + firstYPart + "ay");
-            else
+            else            
             {
             Console.WriteLine(secondPart + firstPart + "ay");     
             }
