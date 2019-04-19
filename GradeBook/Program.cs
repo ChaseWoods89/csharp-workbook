@@ -16,6 +16,12 @@ namespace GradeBook
                 gradeBook.Add(student,Console.ReadLine());
             }
 
+            // need to make grades into array
+
+            //find highest grade
+
+            //find average grades
+
             foreach(var student in gradeBook){
                 Console.WriteLine(student);
             }
