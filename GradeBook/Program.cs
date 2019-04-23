@@ -13,7 +13,8 @@ namespace GradeBook
                 Console.WriteLine("Give me the student's name.");
                 string student = Console.ReadLine();
                 Console.WriteLine("What kind of grades does student have? (please enter 4 grades 0-100)");
-                gradeBook.Add(student,Console.ReadLine());
+                string grades = Console.ReadLine();
+                gradeBook.Add(student,grades);
             }
 
             // need to make grades into array
