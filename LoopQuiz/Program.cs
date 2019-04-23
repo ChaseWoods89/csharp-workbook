@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace LoopQuiz
 {
@@ -8,6 +9,7 @@ namespace LoopQuiz
         {
             int[] Numbers = new int[] {5, 12, 4, 10, 22};
             int biggestOneSoFar = Numbers[0];
+            Math.Max(Numbers);
             for (int idx = 0; idx < Numbers.Length; idx++ )
             {
                 int currentNumber = Numbers[idx];
