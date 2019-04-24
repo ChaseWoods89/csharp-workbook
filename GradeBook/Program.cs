@@ -17,14 +17,11 @@ namespace GradeBook
                 gradeBook.Add(student,grades);
             }
 
-            // need to make grades into array
-
-            //find highest grade
-
-            //find average grades
-
-            foreach(var student in gradeBook){
+            foreach(var student in gradeBook.Keys){
                 Console.WriteLine(student);
+
+                string grades = gradeBook[student];
+                grades.Split(" ");
             }
 
 
