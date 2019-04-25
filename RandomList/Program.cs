@@ -7,26 +7,27 @@ namespace RandomList
     {
         static void Main(string[] args)
         {
-            
-
-            List<string> students = new List<string>{};
-            students.Add("Hank");
-            students.Add("Peggy");
-            students.Add("Bobby");
-            students.Add("LadyBird");
-            students.Add("Dale");
-            students.Add("Khan");
-            students.Add("Bill");
-
-            Random randomName = new Random();
-            
-
-            foreach(string person in students){
-                Console.WriteLine(randomName.Next(0,6));
+            List <int> numbers = new List<int>{};
+            int i = 0;
+            for(i = 0; i < 6; i++){
+            Console.WriteLine("Give me a number!");
+            string input = Console.ReadLine();
+            try{
+            int number = Convert.ToInt32(input);
+            numbers.Add(number);}
+            catch(Exception E){
+                Console.WriteLine(E.Message);
             }
+            
+            
+                
+            
 
             
+
             
         }
     }
+    }
 }
+
