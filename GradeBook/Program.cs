@@ -20,13 +20,12 @@ namespace GradeBook
             foreach(var student in gradeBook.Keys){
 
                 string grades = gradeBook[student];
-                List<int> gradesNumbers = new List<int>(Array.ConvertAll(grades.Split(','), int.Parse));
-                Console.WriteLine(Math.Max(gradesNumbers[0],gradesNumbers[3]));
-                Console.WriteLine(Math.Min(gradesNumbers[0],gradesNumbers[3]));
+                string [] gradesNoSpace = grades.Split(" ");
+                int [] gradesNumber;
 
-                foreach(var person in gradeBook){
+                foreach(int gradeNumber in gradesNoSpace){
                     
-                    Console.WriteLine(gradeBook);
+                    
                 }                 
                 
             }
