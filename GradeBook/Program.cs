@@ -1,4 +1,6 @@
-﻿using System;
+﻿//I am submitting this, but have not been able to figure out how to print the key and the new number array.
+
+using System;
 using System.Collections.Generic;
 
 namespace GradeBook
@@ -7,6 +9,7 @@ namespace GradeBook
     {
         static void Main(string[] args)
         {
+            List <string> GradesIThink;
             Dictionary<string,string> gradeBook = new Dictionary <string, string>();
             int i = 0;
             for( i = 0; i < 5; i++){
@@ -21,12 +24,9 @@ namespace GradeBook
 
                 string grades = gradeBook[student];
                 string [] gradesNoSpace = grades.Split(" ");
-                int [] gradesNumber;
+                int [] actualGrades = Array.ConvertAll(gradesNoSpace, int.Parse);
 
-                foreach(int gradeNumber in gradesNoSpace){
-                    
-                    
-                }                 
+
                 
             }
 
