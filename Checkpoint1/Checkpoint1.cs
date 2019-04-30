@@ -6,7 +6,7 @@ namespace Checkpoint1
     {
         static void Main(string[] args)
         {
-      /* 
+      
             Console.WriteLine("~~~~~~~~~~~~~~~~~~Program 1~~~~~~~~~~~~~~~~~~");  
             int divisibleNumber = 0;
             for(int i = 1; i < 101; i++){
@@ -20,30 +20,29 @@ namespace Checkpoint1
             Console.WriteLine("Press enter to start program 2!");    
             Console.ReadLine();
                         
-      */    
+          
             Console.WriteLine("~~~~~~~~~~~~~~~~~~Program 2~~~~~~~~~~~~~~~~~~"); 
-            int currentNumber = 0;
-            bool ok = true;
-            while(ok){
+            
+            
+            var sum = 0;
+            while(true){
                 Console.WriteLine("Please enter a number or 'ok' to exit");
                 string numberInput = Console.ReadLine().ToLower();
-                int number =  int.Parse(numberInput);
+                
 
                 if( numberInput == "ok" ){
-                    ok = true;
+                    break;
                     
                 }
-                else if ( numberInput != "ok"){
-                    int currentNumber = number;
-                }
+                sum += Convert.ToInt32(numberInput);
 
             }
-                    Console.WriteLine("The sum of your numbers is " + Number);
+                    Console.WriteLine("The sum of your numbers is " + sum );
 
             Console.WriteLine("Press enter to start program 3!");    
             Console.ReadLine(); 
             
-      /*
+      
             Console.WriteLine("~~~~~~~~~~~~~~~~~~Program 3~~~~~~~~~~~~~~~~~~");
             Console.WriteLine("Give me a number and I will give you it's factorial!");
             string userInput = Console.ReadLine();
@@ -74,7 +73,7 @@ namespace Checkpoint1
                 i=4;
             }
             else if( i >= 3){
-                Console.WriteLine("Sorry, you lose!");
+                Console.WriteLine("The number we were looking for was " + winningNumber + ". Sorry, you lose!");
             }
             }
             Console.WriteLine("Press enter to start program 5!");    
@@ -92,15 +91,13 @@ namespace Checkpoint1
                 if(currentNumber < numberArray[i]){
                     currentNumber = numberArray[i];
                 }
-                else {
-                    i++;
-                }
+                
             }
             Console.WriteLine("Your highest number is " + currentNumber);
 
             Console.WriteLine("Press enter to exit all programs, thank you!");    
             Console.ReadLine();
- */    
+  
         
         }
     }
