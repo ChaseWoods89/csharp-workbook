@@ -18,6 +18,7 @@ namespace TicTacToe
             {
                 DrawBoard();
                 GetInput();
+                
 
             } while (!CheckForWin() && !CheckForTie());
 
@@ -32,46 +33,118 @@ namespace TicTacToe
             int row = int.Parse(Console.ReadLine());
             Console.WriteLine("Enter Column:");
             int column = int.Parse(Console.ReadLine());
+            playerTurn = (playerTurn == "X") ? "O" : "X";
+            try
+            {
+                
+            PlaceMark(row, column);
+            }
+            catch (System.Exception)
+            {
+                Console.WriteLine("Please enter only 0-2 for row and column.");
+            }
+            
         }
 
         public static void PlaceMark(int row, int column)
         {
-        // your code goes here
+            board[row][column] = playerTurn;
         }
 
         public static bool CheckForWin()
         {
-            // your code goes here
+            if(VerticalWin() == true)
+            {
+                Console.WriteLine("Player " + playerTurn + " Wins!!!");
+                Console.ReadLine();
+                Environment.Exit(0);
+            }
+
+            else if(HorizontalWin() == true)
+            {
+                Console.WriteLine("Player " + playerTurn + " Wins!!!");
+                Console.ReadLine();
+                Environment.Exit(0);
+
+            } 
+            else if (DiagonalWin() == true)
+            {
+                Console.WriteLine("Player" + playerTurn + " Wins!!!");
+                Console.ReadLine();
+                Environment.Exit(0);
+            }
 
             return false;
+            
         }
 
         public static bool CheckForTie()
         {
-            // your code goes here
-
-            return false;
+           if(board[0][0] == playerTurn && board[0][1] == playerTurn && board[0][2] == playerTurn && board[1][0] == playerTurn && board[1][1] == playerTurn && board[1][2] == playerTurn && board[2][0] == playerTurn && board [2][1] == playerTurn && board[2][2] == playerTurn && HorizontalWin() == false && VerticalWin() == false && DiagonalWin() == false)
+            {
+                Console.WriteLine("It's a Tie!");
+                Console.ReadLine();
+                Environment.Exit(0);
+                return true;
+            }
+            else {
+                return false;
+            }    
         }
         
         public static bool HorizontalWin()
         {
-        // your code goes here
-
-        return false;
+            if(board[0][0] == playerTurn && board[0][1] == playerTurn && board[0][2] == playerTurn)
+            {
+                return true;
+            }
+            else if(board[1][0] == playerTurn && board[1][1] == playerTurn && board[1][2] == playerTurn)
+            {
+                return true;
+            }
+            else if(board[2][0] == playerTurn && board[2][1] == playerTurn && board[2][2] == playerTurn)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public static bool VerticalWin()
         {
-            // your code goes here
-
-            return false;
+            if(board[0][0] == playerTurn && board[1][0] == playerTurn && board[2][0] == playerTurn)
+            {
+                return true;
+            }
+            else if(board[0][1] == playerTurn && board[1][1] == playerTurn && board[2][1] == playerTurn)
+            {
+                return true;
+            }
+            else if(board[0][2] == playerTurn && board[1][2] == playerTurn && board[2][2] == playerTurn)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public static bool DiagonalWin()
         {
-            // your code goes here
-
-            return false;
+            if (board[0][0] == playerTurn && board[1][1] == playerTurn && board[2][2] == playerTurn)
+            {
+                return true;
+            }
+            else if(board[0][2] == playerTurn && board[1][1] == playerTurn && board[2][0] == playerTurn)
+            {
+                return true;
+            }
+            else {
+                return false;
+            }
         }
 
         public static void DrawBoard()
