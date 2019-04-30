@@ -22,7 +22,8 @@ namespace Checkpoint1
                         
           
             Console.WriteLine("~~~~~~~~~~~~~~~~~~Program 2~~~~~~~~~~~~~~~~~~"); 
-            
+            //This one gave me some trouble, had to comb back through the lessons to find break 
+            //which was extremely helpful
             
             var sum = 0;
             while(true){
@@ -44,6 +45,7 @@ namespace Checkpoint1
             
       
             Console.WriteLine("~~~~~~~~~~~~~~~~~~Program 3~~~~~~~~~~~~~~~~~~");
+            //through studying it looks like there is a factorial method somewhere in C#.
             Console.WriteLine("Give me a number and I will give you it's factorial!");
             string userInput = Console.ReadLine();
             int userInt = Convert.ToInt32(userInput);
@@ -64,7 +66,8 @@ namespace Checkpoint1
             int randomNumber = randomInt.Next(1,10);
             int winningNumber = randomNumber;
             
-            
+            //I originally had a line of code to print out the random number
+            //to test win conditions.
             for(int i = 0; i < 4; i++){
             Console.WriteLine("Guess a number 1-10!");
             int userNumber = int.Parse(Console.ReadLine());
