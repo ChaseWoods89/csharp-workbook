@@ -9,9 +9,12 @@ namespace OOP2
         {
             _2DPoint p1 = new _2DPoint(3,4);
             _3DPoint p2 = new _3DPoint(6,2,8);
+            _2DPoint p3 = new _2DPoint(3,4);
 
-            Console.WriteLine("p1 = {0}", p1.ToString());
-            Console.WriteLine("p2 = {0}", p2.ToString());
+            Console.WriteLine("p1 = {0}", p1);
+            Console.WriteLine("p2 = {0}", p2);
+
+            
 
         }
     }
@@ -27,9 +30,20 @@ namespace OOP2
             this.y = initialY;
 
         }
+        override
         public String ToString(){
             String s = String.Format("{0} , {1}", x, y);
             return s;
+        }
+        override
+        public bool Equals(Object otherObject){
+            _2DPoint otherpoint = (_2DPoint) otherObject;
+            if(this.x == otherpoint.x && this.y == otherpoint.y ){
+                return true;
+            }
+            else{
+                return false;
+            }
         }
     }
     public class _3DPoint : _2DPoint
@@ -41,6 +55,13 @@ namespace OOP2
             this.y = initialY;
             this.z = initialZ;
         }
+            override
+            public String ToString()
+            {
+                String s = String.Format("{0}, {1}, {2},", x, y, z);
+                return s;
+            }
+        }
+
     }
     
-}
