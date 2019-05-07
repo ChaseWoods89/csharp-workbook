@@ -1,86 +1,61 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace Mastermind
-{
-    class Program
-    {
-        // possible letters in code
-        public static char[] letters = new char[] { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h' };
-        
-        // size of code
-        public static int codeSize = 4;
-        
-        // number of allowed attempts to crack the code
-        public static int allowedAttempts = 10;
-        
-        // number of tried guesses
-        public static int numTry = 0;
-        
-        // test solution
-        public static char[] solution = new char[] {'a', 'b', 'c', 'd'};
-        
-        // game board
-        public static string[][] board = new string[allowedAttempts][];
-        
-        
-        public static void Main()
-        {
-            char[] guess = new char[4];
-
-            CreateBoard();
-            DrawBoard();
-            Console.WriteLine("Enter Guess:");
-            guess = Console.ReadLine().ToCharArray();
-
-            // leave this command at the end so your program does not close automatically
-            Console.ReadLine();
-        }
-        
-        public static bool CheckSolution(char[] guess)
-        {
-            // Your code here
-
-            return false;
-        }
-        
-        public static string GenerateHint(char[] guess)
-        {
-            // Your code here
-            return " ";
-        }
-        
-        public static void InsertCode(char[] guess)
-        {
-            // Your code here
-        }
-        
-        public static void CreateBoard()
-        {
-            for (var i = 0; i < allowedAttempts; i++)
-            {
-                board[i] = new string[codeSize + 1];
-                for (var j = 0; j < codeSize + 1; j++)
-                {
-                    board[i][j] = " ";
+namespace Mastermind {
+    class Program {
+        static void Main (string[] args) {
+            Game game = new Game (new string[] { "a", "b", "c", "d" });
+            for (int turns = 10; turns > 0; turns--) {
+                Console.WriteLine($"You have {turns} tries left");
+                Console.WriteLine ("Choose four letters: ");
+                string letters = Console.ReadLine ();
+                Ball[] balls = new Ball[4];
+                for (int i = 0; i < 4; i++) {
+                    balls[i] = new Ball (letters[i].ToString());
                 }
+                Row row = new Row (balls);
+                game.AddRow (row);
+                Console.WriteLine (game.Rows);
             }
-        }
-        
-        public static void DrawBoard()
-        {
-            for (var i = 0; i < board.Length; i++)
-            {
-                Console.WriteLine("|" + String.Join("|", board[i]));
-            }
-            
-        }
-        
-        public static void GenerateRandomCode() {
-            Random rnd = new Random();
-            for(var i = 0; i < codeSize; i++)
-            {
-                solution[i] = letters[rnd.Next(0, letters.Length)];
-            }
+            Console.WriteLine ("Out Of Turns");
         }
     }
+
+    class Ball {
+        //this class establishes the "balls" (Strings that will be placed in rows (arrays))
+        String orangeBall = "Orange";
+        String blueBall = "Blue";
+        String greenBall = "Green";
+        String purpleBall = "Purple";
+
+        String yellowBall = "Yellow";
+        String pinkBall = "Pink";
+    }
+
+    class Row {
+        //this class establishes the "Rows" (Arrays which strings are placed)
+       public string [] masterRow = {"","","",""};
+        public string [] firstRowGuess = {"","","",""};
+        public string [] secondRowGuess = {"","","",""};
+        public string [] thirdRowGuess = {"","","",""};
+        public string [] fourthRowGuess = {"","","",""};
+
+    }
+
+    class Game {
+        //this class establishes game logic/rules
+        //need to make logic work, not sure how. essentially
+        //if any row of guesses equal masterRow, the player wins.
+
+        PlayGame(){
+
+        if(firstRowGuess == masterRow){
+
+        }
+
+        }
+        
+
+    }
+
 }
