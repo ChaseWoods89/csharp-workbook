@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace TowersOfHanoi
 {
@@ -6,7 +7,16 @@ namespace TowersOfHanoi
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+        
         }
     }
+    
+    public class Block {
+        public int weight {get; private set;}
+    }
+
+    public class Towers {
+        public Dictionary<string, int> Tower;
+    }
+
 }
