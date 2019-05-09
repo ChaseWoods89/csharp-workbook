@@ -8,7 +8,7 @@ namespace Checkers
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //should only house the game
         }
     }
 
@@ -29,9 +29,9 @@ namespace Checkers
         public string[][] Grid  { get; set; }
         public List<Checker> Checkers { get; set; }
         
-        public Board()
+        public Board() //should not console to the screen
         {
-            // Your code here
+            
             return;
         }
         
@@ -65,7 +65,7 @@ namespace Checkers
         }
         
         public void RemoveChecker(int row, int column)
-        {
+        {//if move 2,2 || -2,2 || -2, -2 ||2,-2 then remove that piece
             // Your code here
             return;
         }
@@ -81,6 +81,10 @@ namespace Checkers
         public Game()
         {
             // Your code here
+        }
+        public bool IsLegalMove()
+        {//can always return true!
+            return true;
         }
     }
 }
