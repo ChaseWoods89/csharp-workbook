@@ -33,6 +33,7 @@ namespace Rentable
 
             foreach(var rental in rentals){
                 Console.WriteLine(rental.getDescription());
+                
             }
  
             
