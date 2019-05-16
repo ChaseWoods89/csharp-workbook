@@ -59,8 +59,8 @@ namespace OOP3
 
         override
         public String ToString(){
-            String s = string.Format(this.color + "" + this.make + "" + this.model + "");
-            return s;
+            String s1 = string.Format(this.color + "" + this.make + "" + this.model + "");
+            return s1;
         }
 
     }
@@ -77,8 +77,8 @@ namespace OOP3
 
         override
         public String ToString(){
-            String s = string.Format(this.bodyType);
-            return s;
+            String s2 = string.Format(this.bodyType);
+            return s2;
         }
 
     }
