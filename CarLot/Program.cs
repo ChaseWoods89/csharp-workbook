@@ -11,7 +11,11 @@ namespace OOP3
             CarLot CL1 = new CarLot("Chase's Cars");
             Car mazda = new Car("White", "Mazda", "3", "Hatchback");
             Car subaru = new Car("Black", "Subaru", "Impreza", "Sedan");
+            Car chevy = new Car("Silver", "Chevy", "Malibu", "Sedan");
+            Car toyota = new Car("Green", "Toyota", "Celica", "Coupe");
             Truck f150 = new Truck("Red", "Ford", "F-150", 5);
+            Truck titan = new Truck("Gray","Nissan","Titan", 5);
+            Truck ram = new Truck("Black", "Dodge", "Ram", 6);
             CL1.Add(mazda);
             CL1.Add(subaru);
             CL1.Add(f150);
@@ -27,8 +31,7 @@ namespace OOP3
         String name;
 
         public CarLot(string intialName){
-            this.name = intialName;
-            
+            this.name = intialName;           
         }
 
         public void Add(Vehicle vehicle){
@@ -37,7 +40,7 @@ namespace OOP3
 
         public void PrintInventory(){
             foreach(var vehicle in inventory){
-                
+                Console.WriteLine(vehicle);
             }
         }
     }
@@ -56,7 +59,7 @@ namespace OOP3
 
         override
         public String ToString(){
-            String s = "";
+            String s = string.Format(this.color + "" + this.make + "" + this.model + "");
             return s;
         }
 
@@ -70,6 +73,12 @@ namespace OOP3
         base(initialColor, initialMake, intialModel ){
             this.bodyType = intialBodyType;
 
+        }
+
+        override
+        public String ToString(){
+            String s = string.Format(this.bodyType);
+            return s;
         }
 
     }
