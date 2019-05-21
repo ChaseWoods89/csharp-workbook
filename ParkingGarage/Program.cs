@@ -4,7 +4,8 @@ public class Program
 {
 	public static void Main()
 	{
-		Car blueCar = new Car("blue");
+		Person chase = new Person("Chase");
+		Car blueCar = new Car("blue", chase);
 		Garage smallGarage = new Garage(2);
 		
 		smallGarage.ParkCar(blueCar, 0);
@@ -12,20 +13,29 @@ public class Program
 	}
 }
 
+public class Person
+{
+    public string name;
+
+	public Person(string initialName)
+	{
+		this.name = initialName;
+	}
+}
+
 class Car
 {
-    public Car(string initialColor)
+    public Car(string initialColor, Person initialPerson)
     {
     	Color = initialColor;
+		this.person = initialPerson;
+		
     }
     
     public string Color { get; private set; }
+	public Person person;
 }
 
-public class Person
-{
-    
-}
 
 class Garage
 {
@@ -49,7 +59,7 @@ class Garage
 			for (int i = 0; i < cars.Length; i++)
 			{
 				if (cars[i] != null) {
-					Console.WriteLine(String.Format("The {0} car is in spot {1}.", cars[i].Color, i));
+					Console.WriteLine(String.Format("The {0} car with {1} in it is in spot {2}.", cars[i].Color, cars[i].person.name, i));
 				}
 			}
 			return "That's all!";
