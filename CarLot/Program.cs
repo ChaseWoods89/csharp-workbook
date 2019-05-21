@@ -9,6 +9,7 @@ namespace OOP3
         public static void Main(String[] args) 
         {
             CarLot CL1 = new CarLot("Chase's Cars");
+            CarLot CL2 = new CarLot("Other guys' Cars");
             Car mazda = new Car("White", "Mazda", "3", "Hatchback");
             Car subaru = new Car("Black", "Subaru", "Impreza", "Sedan");
             Car chevy = new Car("Silver", "Chevy", "Malibu", "Sedan");
@@ -19,8 +20,12 @@ namespace OOP3
             CL1.Add(mazda);
             CL1.Add(subaru);
             CL1.Add(f150);
+            CL2.Add(toyota);
+            CL2.Add(titan);
+            CL2.Add(ram);
 
             CL1.PrintInventory();
+            CL2.PrintInventory();
             
         }
 
@@ -35,12 +40,12 @@ namespace OOP3
         }
 
         public void Add(Vehicle vehicle){
-            //code goes here
+            inventory.Add(vehicle);
         }
 
         public void PrintInventory(){
             foreach(var vehicle in inventory){
-                Console.WriteLine(vehicle);
+                Console.WriteLine(vehicle.ToString());
             }
         }
     }
