@@ -1,0 +1,64 @@
+sqlite> create table todo (
+   ...> id int,
+   ...> description varchar(100),
+   ...> duedate varchar(20),
+   ...> status varchar(20)
+   ...> );
+sqlite> insert into todo(id, description, duedate, status)
+   ...> values(4, 'Do the dishes', 'Friday', 'Pending');
+sqlite> insert into todo(id, description, duedate, status)
+   ...> values(1, 'Mow the grass', 'Sunday (at the latest)', 'Pending');
+sqlite> insert into todo(id, description, duedate, status)
+   ...> values(2, 'Call Mom', 'Monday', 'Completed');
+sqlite> insert into todo(id, description, duedate, status)
+   ...> values(3, 'Pay Electric Bill', 'Tuesday', 'Pending');
+sqlite> insert into todo(id, description, duedate, status)
+   ...> values(5, 'Re-paint bedroom', 'Friday', 'In Progress');
+sqlite> select * from todo
+   ...> ;
+id          description    duedate     status
+----------  -------------  ----------  ----------
+4           Do the dishes  Friday      Pending
+1           Mow the grass  Sunday (at  Pending
+2           Call Mom       Monday      Completed
+3           Pay Electric   Tuesday     Pending
+5           Re-paint bedr  Friday      In Progress
+sqlite> update todo set duedate = 'Thursday' Where id = 4;
+sqlite> select * from todo;
+id          description    duedate     status
+----------  -------------  ----------  ----------
+4           Do the dishes  Thursday    Pending
+1           Mow the grass  Sunday (at  Pending
+2           Call Mom       Monday      Completed
+3           Pay Electric   Tuesday     Pending
+5           Re-paint bedr  Friday      In Progress
+sqlite> select * from todo where status = 'Pending';
+id          description    duedate     status
+----------  -------------  ----------  ----------
+4           Do the dishes  Thursday    Pending
+1           Mow the grass  Sunday (at  Pending
+3           Pay Electric   Tuesday     Pending
+sqlite> delete from todo where status = 'Completed';
+sqlite> select * from todo
+   ...> ;
+id          description    duedate     status
+----------  -------------  ----------  ----------
+4           Do the dishes  Thursday    Pending
+1           Mow the grass  Sunday (at  Pending
+3           Pay Electric   Tuesday     Pending
+5           Re-paint bedr  Friday      In Progress
+sqlite> select * from todo order by id;
+id          description    duedate                 status
+----------  -------------  ----------------------  ----------
+1           Mow the grass  Sunday (at the latest)  Pending
+3           Pay Electric   Tuesday                 Pending
+4           Do the dishes  Thursday                Pending
+5           Re-paint bedr  Friday                  In Progress
+sqlite> update todo set id = id -1 where id > 2;
+sqlite> select * from todo order by id;
+id          description    duedate                 status
+----------  -------------  ----------------------  ----------
+1           Mow the grass  Sunday (at the latest)  Pending
+2           Pay Electric   Tuesday                 Pending
+3           Do the dishes  Thursday                Pending
+4           Re-paint bedr  Friday                  In Progress
