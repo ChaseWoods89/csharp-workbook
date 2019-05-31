@@ -1,0 +1,17 @@
+using System;
+
+namespace ToDoApp
+{
+    public class Item
+    {
+        public int id {get; private set;}
+        public string task {get; set;}
+        public Status status {get; set;}
+        
+    }
+
+    public enum Status 
+    {
+        Pending, Done
+    }
+}
