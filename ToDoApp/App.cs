@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 
 namespace ToDoApp
 {
@@ -12,6 +14,9 @@ namespace ToDoApp
 
         public void start(){
 
+        }
+        public void quit(){
+            
         }
     }
 }
