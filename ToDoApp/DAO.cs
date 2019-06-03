@@ -23,6 +23,15 @@ namespace ToDoApp
      }
      public void markDone(Item item){
          item.status = Status.Done;
+         context.SaveChanges();
+
+     }
+     public List<Item> listAllItems(){
+         List<Item> allItem = new List<Item>();
+         foreach(Item i in context.items){
+             allItem.Add(i);
+         }
+         return allItem;
      }
       public List<Item> listPendingItems()
      {
@@ -46,6 +55,12 @@ namespace ToDoApp
          }
          return markedDone;
      }
+
+     /* 
+     public override string ToString(){
+         string printedList = string.Format("{0}   {1}   {2}", 
+     }
+     */
     }
     public class ItemsContext : DbContext
             {
