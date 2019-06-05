@@ -2,11 +2,12 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
+//Utils does not need to interact with DAO
 namespace ToDoApp
 {
     public class Utils
     {
-         
+         //easiest part of the project was creating the menu.
         public void printMenu() {
             Console.WriteLine("1. Add Task");
             Console.WriteLine("2. Mark Task as Done");
@@ -32,8 +33,10 @@ namespace ToDoApp
         public void printMsg(string message){
             Console.WriteLine(message);
         }
+        //both printmsg and printerror have a string passed in on a by instance basis. 
         public void clear(){
             Console.Clear();
         }
+        //didn't think that i needed to  have a clear, but it keeps the console pretty during the app running.
         }
     }

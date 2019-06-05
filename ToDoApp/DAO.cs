@@ -8,7 +8,7 @@ namespace ToDoApp
     {
      private ItemsContext context;
 
-
+    //DAO does not need to interact with Utils
      public DAO()
      {
          context = new ItemsContext();
@@ -24,11 +24,12 @@ namespace ToDoApp
      public void delete(Item item){
          context.items.Remove(item);
          context.SaveChanges();
+         //delete and create were extremely similar, luckily that worked out
      }
      public void markDone(Item item){
          item.status = Status.Done;
          context.SaveChanges();
-
+        //Markdone felt too simple
      }
      public List<Item> listAllItems(){
          List<Item> allItem = new List<Item>();
@@ -58,8 +59,9 @@ namespace ToDoApp
              }
          }
          return markedDone;
+         //Decided to have methods for all item listings.
      }
-
+    //originally was going to do a ToString, luckily i figured it out and also this wouldn't have been the place for it.
      /* 
      public override string ToString(){
          string printedList = string.Format("{0}   {1}   {2}", 

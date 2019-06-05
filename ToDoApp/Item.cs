@@ -18,7 +18,8 @@ namespace ToDoApp
         }
         
     }
-
+        //went with an enum over a bool because I like the functionality of enums more. made creating methods in
+        //DAO much easier.
     public enum Status 
     {
         Pending, Done

@@ -21,7 +21,8 @@ namespace ToDoApp
             
             
         }
-
+        //Beginning of the whole logic, all of it sits in start and doesn't end until the while loop is broken
+        //very similar to TicTacToe
         public void start(){
             utils.printMenu();
             bool finish = false;
@@ -117,7 +118,7 @@ namespace ToDoApp
                 }
                 }
                 
-                
+                //decided to add clear() methods to keep console clean
             }
             if(menuResponse == "3"){
                 foreach(Item i in dao.listPendingItems()){
@@ -198,7 +199,7 @@ namespace ToDoApp
                 }
                 }   
             }      
-
+            //Delete was the last function i created and almost forgot to do it. luckily it flows just like markdone.
             else if(menuResponse == "7"){
                 utils.clear();
                 utils.printMsg("Thank you! See you next time! (Press Enter to exit)");
@@ -206,9 +207,11 @@ namespace ToDoApp
                 finish = true;
             }
                 
-            
+            //wanted to make the error message cleared before printing menu.
             else{
                 utils.printError("You did not enter a valid selection.");
+                utils.getInput();
+                utils.clear();
                 utils.printMenu();
             }
             }
