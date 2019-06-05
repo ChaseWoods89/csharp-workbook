@@ -21,6 +21,10 @@ namespace ToDoApp
          context.SaveChanges();
          
      }
+     public void delete(Item item){
+         context.items.Remove(item);
+         context.SaveChanges();
+     }
      public void markDone(Item item){
          item.status = Status.Done;
          context.SaveChanges();

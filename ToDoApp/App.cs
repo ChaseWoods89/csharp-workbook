@@ -68,7 +68,7 @@ namespace ToDoApp
                 }
                 }
                 utils.clear();
-                utils.printMenu();
+                
             }
 
             else if(menuResponse == "2"){
@@ -116,7 +116,7 @@ namespace ToDoApp
                     
                 }
                 }
-                utils.printMenu();
+                
                 
             }
             if(menuResponse == "3"){
@@ -152,8 +152,54 @@ namespace ToDoApp
                 utils.clear();
                 utils.printMenu();
             }
-            
+
             else if(menuResponse == "6"){
+                utils.clear();
+                Boolean exit = false;
+                while(exit == false){
+                
+                foreach(Item i in dao.listAllItems()){
+                    string list = string.Format("{0}   {1}   {2}", i.id, i.task, i.status);
+                    utils.printMsg(list);
+
+                }
+                utils.printMsg("Which item would you like to delete?");
+                string doneItemId = utils.getInput();
+                int itemId;
+                if(int.TryParse(doneItemId, out itemId)){
+
+                utils.clear();
+            
+                foreach(Item i in dao.listAllItems()){
+                    if(i.id == itemId){
+                        dao.delete(i);
+                    }
+                }
+                }
+                else{
+                    utils.printError("You did not enter a valid integer");
+                    utils.getInput();
+                    utils.clear();
+                    exit = true;
+                }
+                    
+                utils.printMsg("Would you like to delete another item? (yes or no)");
+                string another = utils.getInput().ToLower();
+
+                if(another == "no"){
+                    exit = true;
+                }
+                else if(another == "yes"){
+                    exit = false;
+                }
+                else{
+                    utils.printError("You have entered an invalid input");
+                    exit = true;   
+                }
+                }   
+            }      
+
+            else if(menuResponse == "7"){
                 utils.clear();
                 utils.printMsg("Thank you! See you next time! (Press Enter to exit)");
                 utils.getInput();
