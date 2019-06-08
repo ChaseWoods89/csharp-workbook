@@ -29,7 +29,7 @@ namespace ToDoApp
      public void markDone(Item item){
          item.status = Status.Done;
          context.SaveChanges();
-        //Markdone felt too simple
+        //Markdone felt too simple, turns out i was right.
      }
      public List<Item> listAllItems(){
          List<Item> allItem = new List<Item>();

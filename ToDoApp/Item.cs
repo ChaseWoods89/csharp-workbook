@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ToDoApp
 {
+    //Model class or "Entity"
     public class Item
     {
         public int id {get; private set;}

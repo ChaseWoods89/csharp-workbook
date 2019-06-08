@@ -123,7 +123,9 @@ namespace ToDoApp
             if(menuResponse == "3"){
                 foreach(Item i in dao.listPendingItems()){
                     string list = string.Format("{0}   {1}   {2}", i.id, i.task, i.status);
+                    
                     utils.printMsg(list);
+                
                 }
                 utils.printMsg("");
                 utils.printMsg("Press enter to return to menu.");
@@ -136,6 +138,7 @@ namespace ToDoApp
                     string list = string.Format("{0}   {1}   {2}", i.id, i.task, i.status);
                     utils.printMsg(list);
                 }
+                
                 utils.printMsg("");
                 utils.printMsg("Press enter to return to menu.");
                 utils.getInput();
@@ -143,10 +146,12 @@ namespace ToDoApp
                 utils.printMenu();
             }
             else if(menuResponse == "5"){
+                
                 foreach(Item i in dao.listAllItems()){
                     string list = string.Format("{0}   {1}   {2}", i.id, i.task, i.status);
                     utils.printMsg(list);
                 }
+                
                 utils.printMsg("");
                 utils.printMsg("Press enter to return to menu.");
                 utils.getInput();
